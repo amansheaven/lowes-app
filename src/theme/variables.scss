@@ -4,7 +4,6 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-font-family: 'Circular';
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
@@ -286,4 +285,88 @@
   font-style: italic;
   font-weight: medium;
   src: url('../assets/fonts/CircularStd-MediumItalic.ttf');
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/Rubik-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: light;
+  src: url('../assets/fonts/Rubik-Light.ttf');
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: medium;
+  src: url('../assets/fonts/Rubik-Medium.ttf');
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: bold;
+  src: url('../assets/fonts/Rubik-Bold.ttf');
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: italic;
+  font-weight: normal;
+  src: url('../assets/fonts/Rubik-Italic.ttf');
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: italic;
+  font-weight: light;
+  src: url('../assets/fonts/Rubik-LightItalic.ttf');
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: italic;
+  font-weight: medium;
+  src: url('../assets/fonts/Rubik-MediumItalic.ttf');
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: italic;
+  font-weight: bold;
+  src: url('../assets/fonts/Rubik-MediumItalic.ttf');
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: light;
+  src: url('../assets/fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  src: url('../assets/fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: medium;
+  src: url('../assets/fonts/Roboto-Medium.ttf');
 }

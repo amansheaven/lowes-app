@@ -1,0 +1,89 @@
+ion-content {
+    // background: #0F2027;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    --background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    align-items: center;
+    text-align: center;
+}
+ion-card {
+    --background: #fff1f3;
+    margin-top: 7rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding-bottom: 2rem;
+    margin-bottom: 4rem;
+    // padding-bottom: 7rem;
+
+}
+
+ion-item{
+    --background: #fff1f3;
+}
+
+ion-text {
+    // --background: #ffdde1;
+    margin-top: 3rem;
+    // padding-left: 0.5rem;
+    font-size: 3em;
+    text-align: left;
+    font-family: "Roboto";
+    font-weight: bold;
+    margin-left: 1rem;
+    // margin-top: 7rem;
+}
+
+ion-grid {
+    margin-left: 0.5rem;
+    // display: inline-block;
+    margin-top: 2rem;
+    // padding: 1rem;
+}
+
+ion-item {
+    padding-top: 3rem;
+    // padding-left: 2rem;
+    --ion-grid-width : 8rem;
+    // --ion-grid-padding : 8rem;
+}
+
+ion-item ion-label{
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: light;
+    text-align: left;
+    font-size: 1.8rem;
+    padding-left: 1rem;
+}
+
+ion-item ion-input{
+    --color : #838383;
+    font-size: 1rem;
+    padding-top: 1rem;
+    margin-left: 1rem;
+}
+
+ion-button{
+    --background: #2b2b2b;
+    --color: #ffffff;
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+}
+
+.bottom {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: light;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    align-items: center;
+
+}
+
