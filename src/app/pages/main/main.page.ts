@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../../api/main.service';
+import { LoadingService } from '../../api/loading.service';
 
 @Component({
   selector: 'app-main',
@@ -8,16 +9,19 @@ import { MainService } from '../../api/main.service';
 })
 export class MainPage implements OnInit {
 
-  username: string ;
+  username = "aman" ;
 
-  constructor(private service : MainService) { }
+  constructor(private service : MainService, private loading : LoadingService ) { }
 
   ngOnInit() {
   }
-  
+
   async login_click(){
-    await this.service.login(this.username);
-    await console.log("DONE WITH SERVICE");
+    await this.loading.loadingPresent();
+    await this.service.login(this.username).then(()=>{
+      this.loading.loadingDismiss();
+    }
+    );
   }
 
 }
