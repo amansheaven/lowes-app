@@ -10,13 +10,13 @@
                 </ion-row>
                 <ion-row>
                     <ion-col>
-                        <ion-input value="lowes" autofous="true"></ion-input>
+                        <ion-input value="lowes" autofous="true" [(ngModel)]="username"></ion-input>
                     </ion-col>
                 </ion-row>
             </ion-grid>
     
         </ion-item>
-        <ion-button shape="round">
+        <ion-button shape="round" (click)="login_click()">
             <ion-icon slot="start" name="key"></ion-icon>
               Login
         </ion-button>
