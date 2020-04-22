@@ -2,6 +2,7 @@ import { Injectable, Query } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { map } from 'rxjs/operators';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 
 
@@ -10,10 +11,11 @@ import { map } from 'rxjs/operators';
 })
 
 export class MainService {
-  store = {};
-  user = {};
   // private query: QueryRef<any>;
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo, private nativeStorage:NativeStorage) {
+    //clearing localstorage at init:
+    nativeStorage.clear().then( () => console.log("Clearing all data res:: "), error => console.error("Error Clearing", error));
+  }
   //pseudo-login fn
   async login(username: string){
     await this.apollo.query<any>({
@@ -43,8 +45,8 @@ export class MainService {
     .toPromise()
     .then(res=>{
       console.log("Got User and Stores");
-      this.store = res.geoStore;
-      this.user = res.getUser;
+      this.nativeStorage.setItem('store',res.geoStore).then(res => console.log("Saved store data"));
+      this.nativeStorage.setItem('user', res.getUser).then(res => console.log("Saved user data"));
       return true;
     })
     .catch(err => {

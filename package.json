@@ -32,6 +32,7 @@
     "apollo-link": "^1.2.14",
     "apollo-link-http": "^1.5.17",
     "cordova-android": "7.1.4",
+    "cordova-browser": "5.0.4",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.0",
@@ -84,7 +85,8 @@
       "cordova-plugin-nativestorage": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }

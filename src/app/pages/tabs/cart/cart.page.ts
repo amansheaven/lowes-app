@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MainService } from '../../../api/main.service';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 @Component({
   selector: 'app-cart',
@@ -7,13 +7,15 @@ import { MainService } from '../../../api/main.service';
   styleUrls: ['./cart.page.scss'],
 })
 export class CartPage implements OnInit {
-  cart = [];
-  constructor(private main: MainService) {
-    console.log(main.user, main.store)
-    this.cart = main.user['cart']
+  user = {};
+  constructor(private nativeStorage:NativeStorage) {
    }
 
   ngOnInit() {
+    this.nativeStorage.getItem('user').then(
+      res => this.user = res ,
+      error => console.error(error)
+    );
   }
 
 }
