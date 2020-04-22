@@ -16,7 +16,7 @@
             </ion-grid>
     
         </ion-item>
-        <ion-button shape="round" (click)="login_click()">
+        <ion-button shape="round" (click)="login_click()" [routerLink]="['/dash']" routerDirection="forward">
             <ion-icon slot="start" name="key"></ion-icon>
               Login
         </ion-button>

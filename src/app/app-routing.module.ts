@@ -7,6 +7,18 @@ const routes: Routes = [
     path: 'main',
     loadChildren: () => import('./pages/main/main.module').then( m => m.MainPageModule)
   },
+  {
+    path: 'dash',
+    loadChildren: () => import('./pages/dash/dash.module').then( m => m.DashPageModule)
+  },
+  {
+    path: 'scan',
+    loadChildren: () => import('./pages/tabs/scan/scan.module').then( m => m.ScanPageModule)
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./pages/tabs/cart/cart.module').then( m => m.CartPageModule)
+  },
 ];
 
 @NgModule({

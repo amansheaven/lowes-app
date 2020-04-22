@@ -13,8 +13,7 @@ export class LoadingService {
   async loadingPresent() {
     this.isLoading = true;
     const loader = await this.loadingController.create({
-      message: 'Please wait ...',
-      spinner: 'circles' 
+      message: 'Please wait ...'
     });
     return loader.present().then(() => console.log('loading presented'));
   }
