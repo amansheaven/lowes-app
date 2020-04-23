@@ -13,7 +13,6 @@ export class DashPage implements OnInit {
 
   async ngOnInit() {
     await this.data.getItem("store").then(res => this.store= res);
-    await console.log(this.store);
     await this.toast.presentToast("Welcome to "+this.store['name']+", "+this.store['city']+".").then(res => res.present());
   }
 

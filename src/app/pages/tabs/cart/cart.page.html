@@ -1,5 +1,32 @@
 <ion-content>
     <div id="header">
-        <ion-text>cart </ion-text><ion-text id="subheader">{{ user.cart?.length }} items to go...</ion-text>
+        <ion-text>cart </ion-text>
+        <ion-button fill="clear" shape="round">pilot <ion-icon name="paper-plane"></ion-icon></ion-button>
     </div>
+    <ion-list>
+            <ion-card *ngFor="let item of cart " shape="round">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="4">
+                            <ion-img [src]="item.img"></ion-img>
+                        </ion-col>
+                        <ion-col>
+                            <ion-row id="headingrow">
+                                <ion-col>
+                                    <ion-text id="heading">{{ item.name | slice:0:20 }}{{item.name.length > 20 ? '...' : ''}}</ion-text>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row id="subheadingrow">
+                                <ion-col>
+                                    <ion-chip color="primary">
+                                        <ion-text id="tag">{{item.tag}}</ion-text>
+                                    </ion-chip>
+                                    <ion-badge color="success">4.4<ion-icon name="star"></ion-icon></ion-badge>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+    </ion-list>
 </ion-content>

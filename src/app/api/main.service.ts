@@ -14,10 +14,10 @@ export class MainService {
   // private query: QueryRef<any>;
   constructor(private apollo: Apollo, private nativeStorage:NativeStorage) {
     //clearing localstorage at init:
-    nativeStorage.clear().then( () => console.log("Clearing all data res:: "), error => console.error("Error Clearing", error));
   }
   //pseudo-login fn
   async login(username: string){
+    await this.nativeStorage.clear().then( () => console.log("Clearing all data res:: "), error => console.error("Error Clearing", error));
     await this.apollo.query<any>({
       query: gql`
       query geoUser($lat:Float,$long:Float, $uname: String!){
@@ -54,4 +54,42 @@ export class MainService {
         return false;
     });
   }
+
+
+  async saveCart(){
+    var cartlist = await this.nativeStorage.getItem('user');
+    cartlist = cartlist.cart;
+    return await this.apollo.query<any>({
+        query: gql`
+        query cart($array:[Int]!) {
+          getProductBatch(pidarray:$array){
+            name
+            row
+            col
+            img
+            tag
+            weight
+          }
+        }      
+        `,
+        variables: {
+          "array": cartlist
+        }
+      })
+      .pipe(
+          map(result => result.data.getProductBatch)
+      )
+      .toPromise()
+      .then(res=>{
+        console.log("Got cart item details");
+        this.nativeStorage.setItem('cartdetails',res).then(res => console.log("Saved store data :: ", res));
+        return Promise;
+      })
+      .catch(err => {
+          console.log("Failed fetching User and Stores :: ", err);
+          return Promise;
+      });
+    
+  }
+
 }

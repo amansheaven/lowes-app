@@ -1,19 +1,88 @@
 ion-content{
-    --background: #EDF5FC;
+    --background: #2A2E45;
     // margin-top: 2rem;
     #header {
-        padding-top: 2rem;
+        // padding-top: 2rem;
+        // padding-left: 2rem;
+        padding: 0.5rem;
         padding-left: 2rem;
+        padding-top: 1rem;
         ion-text {
-            // padding: 5rem;
             font-size: 2.5rem;
             font-family: "Circular";
             font-weight: light;
-            color: rgb(24, 24, 24);
+            color: rgb(255, 255, 255);
         }
-        #subheader{
-            font-size: 2rem;
-            color: rgba(102, 102, 102, 0.733);
+        ion-button {
+            // padding:0.2rem;
+            font-size: 2.5rem  !important;
+            font-family: "Circular" !important;
+            font-weight: light !important;
+            text-transform: none;
+            float: right;
+            color: #06D6A0;
+            ion-icon{
+                font-size: 2rem;
+                margin: auto;
+                color: #48E5C2;
+            }
+        }
+        .button-inner{
+            padding:0.5rem;
+        }
+
+    }
+    ion-list{
+        --backgound: inherit;
+        background-color: transparent;
+        ion-card{
+
+            // padding-top:0.5rem ;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-top: 1rem ;
+            // background: linear-gradient(to right, #d3cce3, #e9e4f0);
+
+            ion-img{
+                width: 80%;
+            }
+            #heading{
+                font-size: 1.2rem;
+                color: rgb(24, 24, 24);
+                font-family: "Rubik";
+                font-weight: normal;
+                // font-weight: bold;
+            }
+            #headingrow{
+                // height: 60%;
+            }
+            #subheadingrow{
+                // height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+            }
+            #tag{
+                font-size: 1rem;
+                text-align: right;
+            }
+            ion-badge{
+                // ion-label{
+                    // display: flex;
+                    // flex-direction: col;
+                    // align-items: ;
+                    font-size: 1rem;
+                    float: right;
+                    margin: auto 5px;
+                    margin-top: 0.3rem;
+                // }
+                // --padding-top:1rem;
+
+                // padding: 0 auto;
+                // justify-content: center;
+            }
+            
         }
     }
 
