@@ -10,15 +10,18 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { GraphQLModule } from './graphql.module';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { DirmapperPipe } from './pipes/dirmapper.pipe';
+import { Pedometer } from '@ionic-native/pedometer/ngx';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DirmapperPipe],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, GraphQLModule],
   providers: [
     StatusBar,
     SplashScreen,
     NativeStorage,
+    Pedometer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

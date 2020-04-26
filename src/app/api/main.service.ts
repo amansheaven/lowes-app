@@ -59,6 +59,7 @@ export class MainService {
   async saveCart(){
     var cartlist = await this.nativeStorage.getItem('user');
     cartlist = cartlist.cart;
+    console.log("Calling with ", cartlist);
     return await this.apollo.query<any>({
         query: gql`
         query cart($array:[Int]!) {

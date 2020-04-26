@@ -28,11 +28,13 @@ export class CartPage implements OnInit {
         );
         this.cartlen = this.cart.length;
       }
+    ).catch(
+      (err)=>console.log("Error :: ", err)
     )
    }
 
-  async ngOnInit() {
-    await this.loadandfetch()
+  ngOnInit() {
+    this.loadandfetch()
   }
 
 }
