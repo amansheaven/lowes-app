@@ -1,0 +1,106 @@
+ion-header{
+    ion-toolbar{
+    --background: #161A1B;
+    }
+    ion-title{
+        font-family: "Circular";
+        font-style: normal;
+        font-weight: bold;
+        color: #CDD2D3;
+        font-size: 1.5rem;
+    }
+}
+ion-content{
+    --background: #1B2021;
+    ion-card{
+        --background: #080B0B;
+        // ion-img{
+        //     width: 100%;
+        //     height: 5rem;
+        //     overflow: hidden;
+        //     img{
+        //         margin: -5rem 0rem 0rem 3rem;
+        //     }
+        // }
+        margin-left: 1rem;
+        margin-right: 1rem;
+        ion-img{
+            padding:1rem;
+        }
+
+            // display: inline;
+            #name{
+                padding-left:1rem ;
+                float: left;
+                font-size: 2rem;
+                font-weight: bold;
+                // width: 100%;
+            }
+            #desc{
+                padding-left:1rem ;
+                padding-right: 1rem;
+                float: left;
+                font-size: 1.2rem;
+                color: whitesmoke;
+                // font-weight: medium;
+            }
+            // #buttons{
+            //     // display: inline-block;
+            //     // white-space: nowrap;
+            //     // box-sizing: border-box;
+
+            // }
+            // #wishlist{
+            //     // float: right;
+            //     // box-sizing: border-box;
+            //     // display: inline-block;
+            //     // width: 50%;
+            //     padding-left: 3rem !important;
+            //     padding-right: 5rem !important;
+            //     --vertical-align: center;
+
+            // }
+            // #genie{
+            //     // float: left;
+            //     --vertical-align: center;
+
+            // }
+        
+    }
+
+    ion-button {
+        // padding:0.2rem;
+        font-size: 1.5rem  !important;
+        font-family: "Circular" !important;
+        font-weight: light !important;
+        text-transform: none;
+        // float: center;?
+        text-align: center;
+        // width: 100%;
+        // align-self: center;
+        // margin-left: auto !important ;
+        // margin-right: auto !important;
+        color: rgb(255, 255, 255);
+        ion-icon{
+            font-size: 2rem;
+            margin: auto;
+            color: rgb(160, 252, 172);
+            padding-right: 1rem;
+        }
+        // padding-left: 3rem;
+        // padding-right:3
+        margin-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        // --height:4rem;
+        // --width:50%;
+        --vertical-align: center;
+        --background: rgb(57, 102, 110);
+        }
+        #wishlist{
+                float: right;
+            }
+        #genie{
+                float: left;
+        }
+}

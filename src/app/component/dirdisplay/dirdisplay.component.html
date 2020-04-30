@@ -1,20 +1,26 @@
 <ion-slides #slides pager="true" [options]="slideOpts" class="swiper-no-swiping" >
   <ion-slide *ngFor="let dir of disproute">
     <ion-card>
-      <ion-text color="primary" class="ion-text-center"><h1> Move {{dir.direction}}</h1></ion-text>
+      <ion-text color="primary" class="ion-text-center"><h1 id="mainheading"> Move {{dir.direction}}</h1></ion-text>
       <ion-icon [name]="dirmapper(dir.direction)"></ion-icon>
       <ion-text color="primary" class="ion-text-center">
-        <h2>{{dir.len}}-{{dispsteps}}</h2>
+        <div>
+          <h2 id="subheading">{{dispsteps}}</h2>
+          <h2 id="subheading2">/{{dir.len}}</h2>
+        </div>
         <!-- <h2>{{dispsteps}}</h2>  -->
       </ion-text>
     </ion-card>
   </ion-slide>
   <ion-slide>
     <ion-card>
-      <ion-text color="primary" class="ion-text-center"><h1>You are here :)</h1></ion-text>
+      <ion-text color="primary" class="ion-text-center"><h1 id="mainheading">You are here :)</h1></ion-text>
       <ion-icon name="happy"></ion-icon>
       <ion-text color="primary" class="ion-text-center">
-        <h2>Explore for more stuff...</h2> 
+        <div>
+          <h2 id="subheading">Explore </h2>
+          <h2 id="subheading2">more stuff</h2>
+        </div>
       </ion-text>
     </ion-card>
   </ion-slide>

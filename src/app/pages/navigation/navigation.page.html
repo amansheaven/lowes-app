@@ -26,14 +26,8 @@
     </ion-card>
 
             <dirdisplay [route]="route"></dirdisplay>
-            <ion-button (click)="onClick()">
-                <ion-icon slot="start" name="add"></ion-icon>
-                Next
-            </ion-button>
+        <ion-button fill="solid" shape="round" (click)="onClick()" *ngIf="isNext">next <ion-icon name="chevron-forward"></ion-icon></ion-button>
+        <ion-button fill="solid" shape="round" (click)="onClickBack()" *ngIf="!isNext"><ion-icon name="chevron-back"></ion-icon>back</ion-button>
 
 </ion-content>
-<!-- <ion-item slot="end">
-  <ion-icon [name]="trial"></ion-icon>
-  <ion-text>{{datadisp}}</ion-text>
-</ion-item> -->
 

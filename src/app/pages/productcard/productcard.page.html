@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="card" class="ion-text-center">{{card.tag}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-img [src]="card.img" *ngIf="card"></ion-img>
+    <ion-text color="primary" class="ion-text-justify">
+      <h1 *ngIf="card" id="name"> {{card.name}}</h1>
+    </ion-text><br>
+    <ion-text color="primary" class="ion-text-justify">
+      <h1 id="desc"> The following product come from a premier house, with currint edgetech.
+        This product is tested under extreme conditions for longevity. Being a pionner in the feild
+        the brand also produes many other components. 
+      </h1>
+    </ion-text>
+  </ion-card>
+  <!-- <ion-item id="buttons"> -->
+    <!-- <section id="buttons"> -->
+      <ion-button fill="solid" shape="round" id="genie"><ion-icon name="color-wand"></ion-icon>genie</ion-button>
+      <ion-button fill="solid" shape="round" id="wishlist"><ion-icon name="cart"></ion-icon>wishlist</ion-button>  
+  <!-- </ion-item> -->
+    <!-- </section> -->
+</ion-content>

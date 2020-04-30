@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { MainService } from '../../../api/main.service';
 import { LoadingService } from '../../../api/loading.service';
@@ -11,9 +11,8 @@ import { LoadingService } from '../../../api/loading.service';
 export class CartPage implements OnInit {
 
   cart = [];
-  cartlen = 0;
 
-  constructor(private nativeStorage:NativeStorage, private service: MainService, private loader: LoadingService) {
+  constructor(private nativeStorage:NativeStorage, private service: MainService, private loader: LoadingService, private change: ChangeDetectorRef) {
    }
 
    async loadandfetch(){
@@ -23,10 +22,9 @@ export class CartPage implements OnInit {
       (res)=>{
         this.loader.loadingDismiss();
         this.nativeStorage.getItem('cartdetails').then(
-          res =>  this.cart=res,
+          res =>  {this.cart=res, this.change.detectChanges()},
           error => console.error(error)
         );
-        this.cartlen = this.cart.length;
       }
     ).catch(
       (err)=>console.log("Error :: ", err)

@@ -5,7 +5,7 @@
     </div>
     <!-- <div scrollX="true" id="fixed"> -->
     <ion-content scrollY="True" id="scroller">
-    <ion-list>
+    <ion-list *ngIf="cart">
             <ion-card *ngFor="let item of cart" shape="round">
                 <ion-grid>
                     <ion-row>

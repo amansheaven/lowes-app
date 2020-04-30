@@ -1,0 +1,79 @@
+ion-content{
+    --background: #DE541E;
+    // margin-top: 2rem;
+    #header {
+        // padding-top: 2rem;
+        // padding-left: 2rem;
+        padding: 0.5rem;
+        padding-left: 2rem;
+        padding-top: 1rem;
+        ion-text {
+            font-size: 2.5rem;
+            font-family: "Circular";
+            font-weight: light;
+            color: rgb(255, 255, 255);
+        }
+        ion-button {
+            // padding:0.2rem;
+            font-size: 2.5rem  !important;
+            font-family: "Circular" !important;
+            font-weight: light !important;
+            text-transform: none;
+            float: right;
+            color: #06D6A0;
+            ion-icon{
+                font-size: 2rem;
+                margin: auto;
+                color: #48E5C2;
+            }
+        }
+        .button-inner{
+            padding:0.5rem;
+        }
+
+    }
+
+    #container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        flex-direction: column;
+    }
+    .pulse-button{
+        padding-bottom: 5rem;
+        margin-bottom: 5rem;
+    }
+    .frame{
+        width: 15rem;
+        height: 15rem;
+        animation: borderPulse 1000ms infinite ease-out;
+        border-radius: 500px;
+        box-shadow: 1rem 1rem black;
+    }
+    @keyframes colorShift {
+        0%, 100% {
+                color: #0045e6;
+        }
+        33% {
+            color: #fb3e3e;
+        }
+        66%{
+            coloor: #0dcc00;
+        }
+    }
+    
+    /* Declare border pulse animation */
+    @keyframes borderPulse {
+      0% {
+        box-shadow: inset 0rem 0rem 0rem 1.5rem rgba(255, 255, 255,.4), 0rem 0rem 0rem 0rem rgba(255,255,255,1);
+      }
+      100% {
+        box-shadow: inset 0rem 0rem 0rem 0.8rem rgba(117, 117, 255,.2), 0rem 0rem 0rem 3rem rgba(255,255,255,0);
+      }
+    }
+    
+    ion-content {
+        --background:#375fae;
+    }
+}

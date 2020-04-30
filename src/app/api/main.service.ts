@@ -93,4 +93,28 @@ export class MainService {
     
   }
 
+  async getProduct(id){
+    id = parseInt(id)
+    console.log("Finding Product ", id);
+    return await this.apollo.query<any>({
+        query: gql`
+        query getproduct($id:Int!) {
+          getProduct(pid:$id){
+            name
+            img
+            tag
+            _id
+          }
+        }           
+        `,
+        variables: {
+          "id": id
+        }
+      })
+      .pipe(
+          map(result => result.data.getProduct)
+      )
+      .toPromise()
+    
+  }
 }

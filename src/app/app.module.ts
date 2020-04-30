@@ -12,6 +12,7 @@ import { GraphQLModule } from './graphql.module';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { DirmapperPipe } from './pipes/dirmapper.pipe';
 import { Pedometer } from '@ionic-native/pedometer/ngx';
+import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 
 @NgModule({
   declarations: [AppComponent, DirmapperPipe],
@@ -22,6 +23,8 @@ import { Pedometer } from '@ionic-native/pedometer/ngx';
     SplashScreen,
     NativeStorage,
     Pedometer,
+    NFC,
+    Ndef,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

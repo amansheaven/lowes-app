@@ -31,6 +31,38 @@ ion-card{
     // margin-right: 3rem;
     // margin-bottom: 5rem;
     border-radius: 2rem;
+    #mainheading{
+        font-size: 2.5rem;
+        font-family: "Circular";
+        font-style: normal;
+        font-weight: bold;
+        color: rgb(63, 63, 63);
+    }
+    #subheading{
+        font-size: 2rem;
+        font-family: "Circular";
+        font-style: normal;
+        font-weight: medium;
+        color: rgb(63, 63, 63);
+        // display: inline;
+        // float: left;
+        display: inline;
+    }
+    #subheading2{
+        font-size: 2rem;
+        font-family: "Circular";
+        font-style: normal;
+        font-weight: medium;
+        color: rgb(63, 63, 63);
+        display: inline;
+        
+        // display: inline;
+        // float: right;
+    }
+    div{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
     // padding-top: 3rem;
     // padding-left: 2rem;
     // padding-right: 2rem;
@@ -41,12 +73,19 @@ ion-card{
         padding-bottom: 1rem;
         padding-left: 5rem;
         padding-right: 5rem;
+        color: lightblue;
         // padding:5rem;
     }
     ion-text {
         h1,h2{
+            font-size: 2rem;
+            font-family: "Circular";
+            font-style: normal;
+            font-weight: medium;
             padding-top: 2rem;
             padding-bottom: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
     }
 }

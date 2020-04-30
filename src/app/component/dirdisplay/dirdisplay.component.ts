@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild, Input, Output, EventEmitter, SimpleChange } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, SimpleChange, ChangeDetectorRef } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
 import { slideOpts } from './slideroptions';
 import { Pedometer } from '@ionic-native/pedometer/ngx'
 import { take, map, tap, finalize, takeWhile, takeUntil } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 // import { LogoMapPipe } from './mapper.pipe';
 
 @Component({
@@ -13,8 +14,8 @@ import { take, map, tap, finalize, takeWhile, takeUntil } from 'rxjs/operators';
 })
 export class DirdisplayComponent implements OnInit {
   @Input() route: {};
-  @Output() change = new EventEmitter();
-  constructor(private pedo : Pedometer) {
+  // @Output() change = new EventEmitter();
+  constructor(private pedo : Pedometer, private changeDetector: ChangeDetectorRef) {
     
    }
   @ViewChild('slides',{static:false})slides: IonSlides;
@@ -74,9 +75,9 @@ export class DirdisplayComponent implements OnInit {
     this.dispsteps = 0;
     console.log("WORKINGG")
     this.pedo.startPedometerUpdates()
-    .pipe( map(res => res.numberOfSteps), tap((res)=>console.log("res:steps:condition",res, steps, !((res > steps) && (res != 0)))),takeWhile(res => !((res > steps) && (res != 0)) ))
+    .pipe( map(res => res.numberOfSteps),takeWhile(res => !((res > steps) && (res != 0)) ))
     .subscribe(
-      (res)=> this.changedisp(res),
+      (res)=>  {this.dispsteps = res; this.changeDetector.detectChanges()},
       (err)=>console.error(err),
       ()=>{
         console.log("done here");
@@ -109,7 +110,6 @@ export class DirdisplayComponent implements OnInit {
   }
 
   changedisp(res){
-    this.dispsteps = res;
     console.log("res:dispsteps", res, this.dispsteps);
     console.log("updated steps")
   }
